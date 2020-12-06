@@ -78,10 +78,5 @@
       "sort-keys": "error",
       "sort-vars": "error"
     }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run all"
-    }
   }
 }

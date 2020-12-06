@@ -169,6 +169,7 @@ export type Model =
 		labels?: Labels;
 		model: Model;
 		openCartAction?: (browser: Browser) => Promise<string>;
+		price?: number | null;
 		series: Series;
 		screenshot?: string;
 		url: string;
