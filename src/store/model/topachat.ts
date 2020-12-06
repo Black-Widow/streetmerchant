@@ -81,12 +81,12 @@ export const TopAchat: Store = {
 			series: 'rx6800xt',
 			url: 'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_wgfx_pcie_puis_ref_est_in20006401.html'
 		},*/
-		{
+		/*{
 			brand: 'SAPPHIRE',
 			model: 'nitro oc se',
 			series: 'rx6800xt',
 			url: 'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_wgfx_pcie_puis_ref_est_in20006403.html'
-		},
+		},*/
 		{
 			brand: 'MSI',
 			model: 'founders edition',
