@@ -99,3 +99,63 @@ export function sendTwitchMessage(link: Link, store: Store) {
 		}
 	}
 }
+export function sendTwitchMessageDelay(link: Link, store: Store) {
+	if (
+		tokenData.accessToken &&
+		twitch.channel &&
+		twitch.clientId &&
+		twitch.clientSecret &&
+		tokenData.refreshToken
+	) {
+		logger.debug('↗ sending twitch message');
+
+		messages.push(
+			`${Print.stockDelaySeven(link, store)}\n${link.cartUrl ? link.cartUrl : link.url}`
+		);
+
+		if (!alreadySaying) {
+			alreadySaying = true;
+			void chatClient.connect();
+		}
+	}
+}
+export function sendTwitchMessageDelay2(link: Link, store: Store) {
+	if (
+		tokenData.accessToken &&
+		twitch.channel &&
+		twitch.clientId &&
+		twitch.clientSecret &&
+		tokenData.refreshToken
+	) {
+		logger.debug('↗ sending twitch message');
+
+		messages.push(
+			`${Print.stockDelayFifteen(link, store)}\n${link.cartUrl ? link.cartUrl : link.url}`
+		);
+
+		if (!alreadySaying) {
+			alreadySaying = true;
+			void chatClient.connect();
+		}
+	}
+}
+export function sendTwitchMessagePreorder(link: Link, store: Store) {
+	if (
+		tokenData.accessToken &&
+		twitch.channel &&
+		twitch.clientId &&
+		twitch.clientSecret &&
+		tokenData.refreshToken
+	) {
+		logger.debug('↗ sending twitch message');
+
+		messages.push(
+			`${Print.preorder(link, store)}\n${link.cartUrl ? link.cartUrl : link.url}`
+		);
+
+		if (!alreadySaying) {
+			alreadySaying = true;
+			void chatClient.connect();
+		}
+	}
+}

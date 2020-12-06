@@ -16,7 +16,7 @@ export const AmazonNl: Store = {
 			]
 		},
 		maxPrice: {
-			container: '#priceblock_ourprice',
+			container: 'span[class*="PriceString"]',
 			euroFormat: true
 		},
 		outOfStock: [

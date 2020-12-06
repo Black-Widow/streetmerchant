@@ -116,22 +116,27 @@ export function includesLabels(
 	);
 }
 
-export async function getPrice(
+export async function cardPrice(
 	page: Page,
 	query: Pricing,
+	max: number,
 	options: Selector
 ): Promise<number | null> {
-	const selector = {...options, selector: query.container};
-	const priceString = await extractPageContents(page, selector);
+	if (!max || max === -1) {
+		return null;
+	}
 
-	if (priceString) {
-		const priceSeparator = query.euroFormat ? /\./g : /,/g;
-		const price = Number.parseFloat(
-			priceString.replace(priceSeparator, '').match(/\d+/g)!.join('.')
+	const selector = {...options, selector: query.container};
+	const cardPrice = await extractPageContents(page, selector);
+
+	if (cardPrice) {
+		const priceSeperator = query.euroFormat ? /\./g : /,/g;
+		const cardpriceNumber = Number.parseFloat(
+			cardPrice.replace(priceSeperator, '').match(/\d+/g)!.join('.')
 		);
 
-		logger.debug('received price', price);
-		return price;
+		logger.debug(`Raw card price: ${cardPrice} | Limit: ${max}`);
+		return cardpriceNumber > max ? cardpriceNumber : null;
 	}
 
 	return null;

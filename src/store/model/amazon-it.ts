@@ -12,7 +12,7 @@ export const AmazonIt: Store = {
 			text: ['Aggiungi al carrello']
 		},
 		maxPrice: {
-			container: '#priceblock_ourprice'
+			container: 'span[class*="PriceString"]'
 		}
 	},
 	links: [

@@ -76,6 +76,10 @@ export function parseCard(name: string): Card | null {
 
 	// Account for incorrect titles, e.g. MSIGeforce
 	name = name.replace(/geforce/i, '');
+	name = name.replace(/radeon/i, '');
+	name = name.replace(/rx/i, '');
+	name = name.replace(/xt/i, '');
+	name = name.replace(/d/i, '');
 
 	name = name.replace(/[^\w ]+/g, '');
 	name = name.replace(/\bgraphics card\b/gi, '');

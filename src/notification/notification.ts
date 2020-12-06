@@ -14,6 +14,9 @@ import {sendTelegramMessage} from './telegram';
 import {sendTweet} from './twitter';
 import {sendTwilioMessage} from './twilio';
 import {sendTwitchMessage} from './twitch';
+import {sendTwitchMessageDelay} from './twitch';
+import {sendTwitchMessageDelay2} from './twitch';
+import {sendTwitchMessagePreorder} from './twitch';
 
 export function sendNotification(link: Link, store: Store) {
 	// Priority
@@ -33,4 +36,16 @@ export function sendNotification(link: Link, store: Store) {
 	sendTweet(link, store);
 	sendTwilioMessage(link, store);
 	sendTwitchMessage(link, store);
+}
+export function sendNotification1(link: Link, store: Store) {
+	// Priority
+	sendTwitchMessageDelay(link, store);
+}
+export function sendNotification2(link: Link, store: Store) {
+	// Priority
+	sendTwitchMessageDelay2(link, store);
+}
+export function sendNotification3(link: Link, store: Store) {
+	// Priority
+	sendTwitchMessagePreorder(link, store);
 }

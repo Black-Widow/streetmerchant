@@ -1,189 +1,170 @@
 import {Store} from './store';
 
 export const AmazonFr: Store = {
-	backoffStatusCodes: [403, 429, 503],
 	labels: {
 		captcha: {
 			container: 'body',
 			text: ['entrez les caractères que vous voyez ci-dessous']
 		},
 		inStock: {
-			container: '#desktop_buybox',
-			text: ['ajouter au panier']
+			container: '#availability',
+			text: ['Voir les offres de ']
 		},
 		maxPrice: {
-			container: '#priceblock_ourprice',
-			euroFormat: true
-		},
-		outOfStock: [
-			{
-				container: '#availability',
-				text: ['Actuellement indisponible']
-			}
-		]
+			container: 'span[class*="priceBlockBuyingPriceString"]',
+			euroFormat: false
+		}
 	},
 	links: [
 		{
 			brand: 'test:brand',
 			model: 'test:model',
 			series: 'test:series',
-			url: 'https://www.amazon.fr/dp/B07PW9VBK5'
+			url: 'https://www.amazon.fr/dp/B07PBLD2MX'
 		},
 		{
-			brand: 'msi',
+			brand: 'MSI',
 			model: 'gaming x trio',
 			series: '3080',
 			url: 'https://www.amazon.fr/dp/B08HR7SV3M'
 		},
 		{
-			brand: 'msi',
+			brand: 'MSI',
 			model: 'ventus 3x oc',
 			series: '3080',
 			url: 'https://www.amazon.fr/dp/B08HR5SXPS'
 		},
-		{
-			brand: 'evga',
+		/*{
+			brand: 'EVGA',
 			model: 'ftw3',
 			series: '3080',
 			url: 'https://www.amazon.fr/dp/B08HR3DPGW'
-		},
+		},*/
 		{
-			brand: 'evga',
+			brand: 'EVGA',
 			model: 'ftw3 ultra',
 			series: '3080',
 			url: 'https://www.amazon.fr/dp/B08HR3Y5GQ'
 		},
 		{
-			brand: 'evga',
+			brand: 'EVGA',
 			model: 'xc3 ultra',
 			series: '3080',
 			url: 'https://www.amazon.fr/dp/B08HR55YB5'
 		},
 		{
-			brand: 'evga',
+			brand: 'EVGA',
 			model: 'xc3',
 			series: '3080',
 			url: 'https://www.amazon.fr/dp/B08HR4RJ3Q'
 		},
 		{
-			brand: 'evga',
+			brand: 'EVGA',
 			model: 'xc3 black',
 			series: '3080',
 			url: 'https://www.amazon.fr/dp/B08HR6FMF3'
 		},
 		{
-			brand: 'gigabyte',
+			brand: 'GIGABYTE',
 			model: 'gaming oc',
 			series: '3080',
 			url: 'https://www.amazon.fr/dp/B08HJTH61J'
 		},
 		{
-			brand: 'gigabyte',
+			brand: 'GIGABYTE',
 			model: 'eagle oc',
 			series: '3080',
 			url: 'https://www.amazon.fr/dp/B08HJS2JLJ'
 		},
 		{
-			brand: 'asus',
+			brand: 'ASUS',
 			model: 'tuf',
 			series: '3080',
 			url: 'https://www.amazon.fr/dp/B08HHDP9DW'
 		},
 		{
-			brand: 'asus',
+			brand: 'ASUS',
 			model: 'tuf oc',
 			series: '3080',
 			url: 'https://www.amazon.fr/dp/B08HH5WF97'
 		},
 		{
-			brand: 'zotac',
+			brand: 'ZOTAC',
 			model: 'trinity',
 			series: '3080',
 			url: 'https://www.amazon.fr/dp/B08HJNKT3P'
 		},
 		{
-			brand: 'zotac',
+			brand: 'ZOTAC',
 			model: 'trinity',
 			series: '3090',
 			url: 'https://www.amazon.fr/dp/B08HJQ182D'
 		},
 		{
-			brand: 'msi',
+			brand: 'MSI',
 			model: 'ventus 3x oc',
 			series: '3090',
 			url: 'https://www.amazon.fr/dp/B08HR9D2JS'
 		},
 		{
-			brand: 'gigabyte',
+			brand: 'GIGABYTE',
 			model: 'gaming oc',
 			series: '3090',
 			url: 'https://www.amazon.fr/dp/B08HJRF2CN'
 		},
 		{
-			brand: 'gigabyte',
+			brand: 'GIGABYTE',
 			model: 'eagle oc',
 			series: '3090',
 			url: 'https://www.amazon.fr/dp/B08HJPDJTY'
 		},
 		{
-			brand: 'asus',
+			brand: 'ASUS',
 			model: 'tuf',
 			series: '3090',
 			url: 'https://www.amazon.fr/dp/B08HJGNJ81'
 		},
 		{
-			brand: 'asus',
+			brand: 'ASUS',
 			model: 'tuf oc',
 			series: '3090',
 			url: 'https://www.amazon.fr/dp/B08HJLLF7G'
 		},
 		{
-			brand: 'amd',
+			brand: 'AMD',
 			model: '5600x',
 			series: 'ryzen5600',
 			url: 'https://www.amazon.fr/dp/B08166SLDF'
 		},
 		{
-			brand: 'amd',
+			brand: 'AMD',
 			model: '5800x',
 			series: 'ryzen5800',
 			url: 'https://www.amazon.fr/dp/B0815XFSGK'
 		},
 		{
-			brand: 'amd',
+			brand: 'AMD',
 			model: '5900x',
 			series: 'ryzen5900',
 			url: 'https://www.amazon.fr/dp/B08164VTWH'
 		},
 		{
-			brand: 'amd',
+			brand: 'AMD',
 			model: '5950x',
 			series: 'ryzen5950',
 			url: 'https://www.amazon.fr/dp/B0815Y8J9N'
 		},
 		{
-			brand: 'sony',
+			brand: 'SONY',
 			model: 'ps5 console',
 			series: 'sonyps5c',
-			url: 'https://www.amazon.fr/dp/B08H93ZRK9'
+			url: 'https://www.amazon.fr/dp/B08GSC5D9G'
 		},
 		{
-			brand: 'sony',
+			brand: 'SONY',
 			model: 'ps5 digital',
 			series: 'sonyps5de',
-			url: 'https://www.amazon.fr/dp/B08H98GVK8'
-		},
-		{
-			brand: 'microsoft',
-			model: 'xbox series x',
-			series: 'xboxsx',
-			url: 'https://www.amazon.fr/dp/B08H93ZRLL'
-		},
-		{
-			brand: 'microsoft',
-			model: 'xbox series s',
-			series: 'xboxss',
-			url: 'https://www.amazon.fr/dp/B087VM5XC6'
+			url: 'https://www.amazon.fr/dp/B08GS1N24H'
 		}
 	],
 	name: 'amazon-fr'
