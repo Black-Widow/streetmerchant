@@ -80,7 +80,7 @@ export function parseCard(name: string): Card | null {
 	name = name.replace(/geforce/i, '');
 	name = name.replace(/radeon/i, '');
 	name = name.replace(/xt/i, '');
-	name = name.replace(/d/i, '');
+	//name = name.replace(/d/i, '');
 
 	name = name.replace(/[^\w ]+/g, '');
 	name = name.replace(/\bgraphics card\b/gi, '');
