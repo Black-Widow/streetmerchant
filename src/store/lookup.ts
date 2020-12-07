@@ -1,7 +1,7 @@
 import {Browser, Page, PageEventObj, Request, Response} from 'puppeteer';
 import {Link, Store, getStores} from './model';
 import {Print, logger} from '../logger';
-import {Selector, getPrice, pageIncludesLabels} from './includes-labels';
+import {Selector, cardPrice, pageIncludesLabels} from './includes-labels';
 import {
 	closePage,
 	delay,
@@ -16,9 +16,15 @@ import {filterStoreLink} from './filter';
 import open from 'open';
 import {processBackoffDelay} from './model/helpers/backoff';
 import {sendNotification} from '../notification';
+import {sendNotification1} from '../notification';
+import {sendNotification2} from '../notification';
+import {sendNotification3} from '../notification';
 import useProxy from 'puppeteer-page-proxy';
 
+
 const inStock: Record<string, boolean> = {};
+const stockDelayFifteen: Record<string, boolean> = {};
+const stockDelaySeven: Record<string, boolean> = {};
 
 const linkBuilderLastRunTimes: Record<string, number> = {};
 
@@ -149,6 +155,14 @@ async function lookup(browser: Browser, store: Store) {
 			logger.info(Print.inStockWaiting(link, store, true));
 			continue;
 		}
+		if (config.page.inStockWaitTime && stockDelaySeven[link.url]) {
+			logger.info(Print.inStockWaiting(link, store, true));
+			continue;
+		}
+		if (config.page.inStockWaitTime && stockDelayFifteen[link.url]) {
+			logger.info(Print.inStockWaiting(link, store, true));
+			continue;
+		}
 
 		const proxy = nextProxy(store);
 
@@ -213,9 +227,9 @@ async function lookup(browser: Browser, store: Store) {
 			statusCode = await lookupCard(browser, store, page, link);
 		} catch (error: unknown) {
 			logger.error(
-				`✖ [${store.name}] ${link.brand} ${link.series} ${
-					link.model
-				} - ${(error as Error).message}`
+				`✖ [${store.name}] ${link.brand} ${link.series} ${link.model} - ${
+					(error as Error).message
+				}`
 			);
 			const client = await page.target().createCDPSession();
 			await client.send('Network.clearBrowserCookies');
@@ -267,9 +281,7 @@ async function lookupCard(
 
 	if (await lookupCardInStock(store, page, link)) {
 		const givenUrl =
-			link.cartUrl && config.store.autoAddToCart
-				? link.cartUrl
-				: link.url;
+			link.cartUrl && config.store.autoAddToCart ? link.cartUrl : link.url;
 		logger.info(`${Print.inStock(link, store, true)}\n${givenUrl}`);
 
 		if (config.browser.open) {
@@ -306,21 +318,80 @@ async function lookupCardInStock(store: Store, page: Page, link: Link) {
 		type: 'textContent'
 	};
 
-	if (store.labels.captcha) {
-		if (await pageIncludesLabels(page, store.labels.captcha, baseOptions)) {
-			logger.warn(Print.captcha(link, store, true));
-			await delay(getSleepTime(store));
+	if (store.labels.inStock) {
+		const options = {
+			...baseOptions,
+			requireVisible: true,
+			type: 'outerHTML' as const
+		};
+	}
+
+	if (link.labels?.inStock) {
+		const options = {
+			...baseOptions,
+			requireVisible: true,
+			type: 'outerHTML' as const
+		};
+	}
+
+	if (store.labels.outOfStock) {
+		if (await pageIncludesLabels(page, store.labels.outOfStock, baseOptions)) {
+			logger.info(Print.outOfStock(link, store, true));
+			return false;
+		}
+	}
+	if (store.labels.stockDelaySeven) {
+		if (await pageIncludesLabels(page, store.labels.stockDelaySeven, baseOptions)) {
+			const givenUrl =
+				link.cartUrl && config.store.autoAddToCart ? link.cartUrl : link.url;
+			logger.info(`${Print.stockDelaySeven(link, store, true)}\n${givenUrl}`);
+			sendNotification1(link, store);
+			if (config.page.inStockWaitTime) {
+				stockDelaySeven[link.url] = true;
+
+				setTimeout(() => {
+					stockDelaySeven[link.url] = false;
+				}, 1000 * config.page.inStockWaitTime);
+			}
+			return false;
+		}
+	}
+	if (store.labels.stockDelayFifteen) {
+		if (await pageIncludesLabels(page, store.labels.stockDelayFifteen, baseOptions)) {
+			const givenUrl =
+				link.cartUrl && config.store.autoAddToCart ? link.cartUrl : link.url;
+			logger.info(`${Print.stockDelayFifteen(link, store, true)}\n${givenUrl}`);
+			sendNotification2(link, store);
+			if (config.page.inStockWaitTime) {
+				stockDelayFifteen[link.url] = true;
+
+				setTimeout(() => {
+					stockDelayFifteen[link.url] = false;
+				}, 1000 * config.page.inStockWaitTime);
+			}
+			return false;
+		}
+	}
+	if (store.labels.preorder) {
+		if (await pageIncludesLabels(page, store.labels.preorder, baseOptions)) {
+			const givenUrl =
+				link.cartUrl && config.store.autoAddToCart ? link.cartUrl : link.url;
+			logger.info(`${Print.preorder(link, store, true)}\n${givenUrl}`);
+			sendNotification3(link, store);
+			if (config.page.inStockWaitTime) {
+				stockDelayFifteen[link.url] = true;
+
+				setTimeout(() => {
+					stockDelayFifteen[link.url] = false;
+				}, 1000 * config.page.inStockWaitTime);
+			}
 			return false;
 		}
 	}
 
 	if (store.labels.bannedSeller) {
 		if (
-			await pageIncludesLabels(
-				page,
-				store.labels.bannedSeller,
-				baseOptions
-			)
+			await pageIncludesLabels(page, store.labels.bannedSeller, baseOptions)
 		) {
 			logger.warn(Print.bannedSeller(link, store, true));
 			return false;
@@ -328,12 +399,23 @@ async function lookupCardInStock(store: Store, page: Page, link: Link) {
 	}
 
 	if (store.labels.maxPrice) {
+		const price = await cardPrice(
+			page,
+			store.labels.maxPrice,
+			config.store.maxPrice.series[link.series],
+			baseOptions
+		);
 		const maxPrice = config.store.maxPrice.series[link.series];
+		if (price) {
+			logger.info(Print.maxPrice(link, store, price, maxPrice, true));
+			return false;
+		}
+	}
 
-		link.price = await getPrice(page, store.labels.maxPrice, baseOptions);
-
-		if (link.price && link.price > maxPrice && maxPrice > 0) {
-			logger.info(Print.maxPrice(link, store, maxPrice, true));
+	if (store.labels.captcha) {
+		if (await pageIncludesLabels(page, store.labels.captcha, baseOptions)) {
+			logger.warn(Print.captcha(link, store, true));
+			await delay(getSleepTime(store));
 			return false;
 		}
 	}

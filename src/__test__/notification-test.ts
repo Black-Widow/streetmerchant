@@ -5,7 +5,6 @@ const link: Link = {
 	brand: 'test:brand',
 	cartUrl: 'https://www.example.com/cartUrl',
 	model: 'test:model',
-	price: 100,
 	series: 'test:series',
 	url: 'https://www.example.com/url'
 };

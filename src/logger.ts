@@ -99,14 +99,53 @@ export const Print = {
 		const productString = `${buildProductString(link, store)} :: IN STOCK`;
 
 		if (color) {
-			return chalk.bgGreen.white.bold(`🚀🚨 ${productString} 🚨🚀`);
+			return chalk.bgGreen.white.bold(`🚀🚨 ${productString} 🚨🚀 `);
 		}
 
 		if (sms) {
 			return productString;
 		}
 
-		return `🚀🚨 ${productString} 🚨🚀`;
+		return `🚀🚨 ${productString} 🚨🚀 `;
+	},
+	stockDelaySeven(link: Link, store: Store, color?: boolean, sms?: boolean): string {
+		const productString = `${buildProductString(link, store)} :: IN STOCK DELAY -> 7 TO 15 DAYS`;
+
+		if (color) {
+			return chalk.bgYellow.white.bold(`⏱️⏱️ ${productString} ⏱️⏱️`);
+		}
+
+		if (sms) {
+			return productString;
+		}
+
+		return `⏱️⏱️ ${productString} ⏱️⏱️ `;
+	},
+	stockDelayFifteen(link: Link, store: Store, color?: boolean, sms?: boolean): string {
+		const productString = `${buildProductString(link, store)} :: IN STOCK DELAY -> + 15 DAYS`;
+
+		if (color) {
+			return chalk.bgRed.white.bold(`⏱️⏱️ ${productString} ⏱️⏱️ `);
+		}
+
+		if (sms) {
+			return productString;
+		}
+
+		return `⏱️⏱️ ${productString} ⏱️⏱️ `;
+	},
+	preorder(link: Link, store: Store, color?: boolean, sms?: boolean): string {
+		const productString = `${buildProductString(link, store)} :: PRE-ORDER`;
+
+		if (color) {
+			return chalk.bgCyan.white.bold(`📦📦 ${productString} 📦📦 `);
+		}
+
+		if (sms) {
+			return productString;
+		}
+
+		return `📦📦 ${productString} 📦📦 `;
 	},
 	inStockWaiting(link: Link, store: Store, color?: boolean): string {
 		if (color) {
@@ -123,6 +162,7 @@ export const Print = {
 	maxPrice(
 		link: Link,
 		store: Store,
+		price: number,
 		maxPrice: number,
 		color?: boolean
 	): string {
@@ -131,15 +171,14 @@ export const Print = {
 				'✖ ' +
 				buildProductString(link, store, true) +
 				' :: ' +
-				chalk.yellow(
-					`PRICE ${link.price ?? ''} EXCEEDS LIMIT ${maxPrice}`
-				)
+				chalk.yellow(`PRICE ${link.price ?? ''} EXCEEDS LIMIT ${maxPrice}`)
 			);
 		}
 
-		return `✖ ${buildProductString(link, store)} :: PRICE ${
-			link.price ?? ''
-		} EXCEEDS LIMIT ${maxPrice}`;
+		return `✖ ${buildProductString(
+			link,
+			store
+		)} :: PRICE ${price} EXCEEDS LIMIT ${maxPrice}`;
 	},
 	message(
 		message: string,
@@ -220,7 +259,7 @@ function buildSetupString(
 function buildProductString(link: Link, store: Store, color?: boolean): string {
 	if (color) {
 		return (
-			chalk.cyan(`[${store.name}]`) +
+			chalk.magenta(`[${store.name}]`) +
 			chalk.grey(` [${link.brand} (${link.series})] ${link.model}`)
 		);
 	}
