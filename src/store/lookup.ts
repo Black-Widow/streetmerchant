@@ -26,6 +26,7 @@ import useProxy from 'puppeteer-page-proxy';
 const inStock: Record<string, boolean> = {};
 const stockDelayFifteen: Record<string, boolean> = {};
 const stockDelaySeven: Record<string, boolean> = {};
+const preorder: Record<string, boolean> = {};
 
 const linkBuilderLastRunTimes: Record<string, number> = {};
 

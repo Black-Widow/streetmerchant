@@ -163,7 +163,7 @@ export const Print = {
 		link: Link,
 		store: Store,
 		price: number,
-		maxPrice: number,
+		maxPrice: boolean,
 		color?: boolean
 	): string {
 		if (color) {

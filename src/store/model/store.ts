@@ -185,6 +185,9 @@ export type Labels = {
 	container?: string;
 	inStock?: LabelQuery;
 	outOfStock?: LabelQuery;
+	stockDelaySeven?: LabelQuery;
+	stockDelayFifteen?: LabelQuery;
+	preorder?: LabelQuery;
 	maxPrice?: Pricing;
 };
 
