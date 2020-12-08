@@ -147,6 +147,36 @@ export const TopAchat: Store = {
 			series: 'rx6800xt',
 			url: 'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_wgfx_pcie_puis_ref_est_in20006556.html'
 		},
+		{
+			brand: 'asrock',
+			model: 'founders edition',
+			series: 'rx6900xt',
+			url: 'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_wgfx_pcie_puis_ref_est_in20006746.html'
+		},
+		{
+			brand: 'asus',
+			model: 'founders edition',
+			series: 'rx6900xt',
+			url: 'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_wgfx_pcie_puis_ref_est_in20006673.html'
+		},
+		{
+			brand: 'msi',
+			model: 'founders edition',
+			series: 'rx6900xt',
+			url: 'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_wgfx_pcie_puis_ref_est_in20006719.html'
+		},
+		{
+			brand: 'powercolor',
+			model: 'founders edition',
+			series: 'rx6900xt',
+			url: 'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_wgfx_pcie_puis_ref_est_in20006763.html'
+		},
+		{
+			brand: 'sapphire',
+			model: 'founders edition',
+			series: 'rx6900xt',
+			url: 'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_wgfx_pcie_puis_ref_est_in20006643.html'
+		},
 		// RTX 3070
 		// ==================
 		{
