@@ -81,6 +81,7 @@ import {Spielegrotte} from './spielegrotte';
 import {Store} from './store';
 import {Target} from './target';
 import {TopAchat} from './topachat';
+import {ToysRUs} from './toysrus';
 import {Unieuro} from './unieuro';
 import {Very} from './very';
 import {VsGamers} from './vsgamers';
@@ -173,6 +174,7 @@ export const storeList = new Map([
 	[MaterielNet.name, MaterielNet],
 	[Infomax.name, Infomax],
 	[HardwareFR.name, HardwareFR],
+	[ToysRUs.name, ToysRUs],
 	[Unieuro.name, Unieuro],
 	[Very.name, Very],
 	[VsGamers.name, VsGamers],
