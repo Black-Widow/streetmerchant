@@ -129,6 +129,11 @@ export const MaterielNet: Store = {
 				series: 'rx6800xt',
 				url:
 					'https://www.materiel.net/carte-graphique/l426/+fv121-19340/'
+			},
+			{
+				series: 'rx6900xt',
+				url:
+					'https://www.materiel.net/carte-graphique/l426/+fv121-19367/'
 			}
 		]
 	},

@@ -16,6 +16,7 @@ import {filterStoreLink} from './filter';
 import open from 'open';
 import {processBackoffDelay} from './model/helpers/backoff';
 import {sendNotification} from '../notification';
+import {sendNotification0} from '../notification';
 import {sendNotification1} from '../notification';
 import {sendNotification2} from '../notification';
 import {sendNotification3} from '../notification';
@@ -290,6 +291,7 @@ async function lookupCard(
 				: link.openCartAction(browser));
 		}
 
+		sendNotification0(link, store);
 		sendNotification(link, store);
 
 		if (config.page.inStockWaitTime) {
@@ -428,41 +430,6 @@ async function lookupCardInStock(store: Store, page: Page, link: Link) {
 	// ) {
 	// 	return store.realTimeInventoryLookup(link.itemNumber);
 	// }
-
-	if (store.labels.inStock) {
-		const options = {
-			...baseOptions,
-			requireVisible: true,
-			type: 'outerHTML' as const
-		};
-
-		if (!(await pageIncludesLabels(page, store.labels.inStock, options))) {
-			logger.info(Print.outOfStock(link, store, true));
-			return false;
-		}
-	}
-
-	if (link.labels?.inStock) {
-		const options = {
-			...baseOptions,
-			requireVisible: true,
-			type: 'outerHTML' as const
-		};
-
-		if (!(await pageIncludesLabels(page, link.labels.inStock, options))) {
-			logger.info(Print.outOfStock(link, store, true));
-			return false;
-		}
-	}
-
-	if (store.labels.outOfStock) {
-		if (
-			await pageIncludesLabels(page, store.labels.outOfStock, baseOptions)
-		) {
-			logger.info(Print.outOfStock(link, store, true));
-			return false;
-		}
-	}
 
 	return true;
 }

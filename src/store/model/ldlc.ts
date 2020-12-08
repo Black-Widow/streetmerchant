@@ -136,6 +136,11 @@ export const LDLC: Store = {
 				series: 'rx6800xt',
 				url:
 					'https://www.ldlc.com/informatique/pieces-informatique/carte-graphique-interne/c4684/+fv121-19340.html'
+			},
+			{
+				series: 'rx6900xt',
+				url:
+					'https://www.ldlc.com/informatique/pieces-informatique/carte-graphique-interne/c4684/+fv121-19367.html'
 			}
 		]
 	},

@@ -35,9 +35,11 @@ export function sendNotification(link: Link, store: Store) {
 	sendTelegramMessage(link, store);
 	sendTweet(link, store);
 	sendTwilioMessage(link, store);
-	sendTwitchMessage(link, store);
 }
-export function sendNotification1(link: Link, store: Store) {
+export function sendNotification0(link: Link, store: Store) {
+	// Priority
+	sendTwitchMessage(link, store);
+}export function sendNotification1(link: Link, store: Store) {
 	// Priority
 	sendTwitchMessageDelay(link, store);
 }
