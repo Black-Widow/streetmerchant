@@ -141,7 +141,22 @@ export const LDLC: Store = {
 				series: 'rx6900xt',
 				url:
 					'https://www.ldlc.com/informatique/pieces-informatique/carte-graphique-interne/c4684/+fv121-19367.html'
-			}
+			},
+			{
+				series: '750W',
+				url:
+					'https://www.ldlc.com/informatique/pieces-informatique/alimentation-pc/c4289/+fb-C000005572+fi8-l750h750.html'
+			},
+			{
+				series: '850W',
+				url:
+					'https://www.ldlc.com/informatique/pieces-informatique/alimentation-pc/c4289/+fb-C000005572+fi8-l850h850.html'
+			},
+			{
+				series: '1000W',
+				url:
+					'https://www.ldlc.com/informatique/pieces-informatique/alimentation-pc/c4289/+fb-C000005572+fi8-l1000h1000.html'
+			},
 		]
 	},
   name: 'ldlc',

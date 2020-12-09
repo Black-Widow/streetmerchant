@@ -1,4 +1,5 @@
 import {Store} from './store';
+import {getProductLinksBuilder} from "./helpers/card";
 
 export const TopAchat: Store = {
 	labels: {
@@ -69,24 +70,24 @@ export const TopAchat: Store = {
 			series: 'rx6800',
 			url: 'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_wgfx_pcie_puis_ref_est_in20006281.html'
 		},
-		/*{
+		{
 			brand: 'SAPPHIRE',
 			model: 'nitro oc',
 			series: 'rx6800',
 			url: 'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_wgfx_pcie_puis_ref_est_in20006402.html'
-		},*/
-		/*{
+		},
+		{
 			brand: 'SAPPHIRE',
 			model: 'nitro oc',
 			series: 'rx6800xt',
 			url: 'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_wgfx_pcie_puis_ref_est_in20006401.html'
-		},*/
-		/*{
+		},
+		{
 			brand: 'SAPPHIRE',
 			model: 'nitro oc se',
 			series: 'rx6800xt',
 			url: 'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_wgfx_pcie_puis_ref_est_in20006403.html'
-		},*/
+		},
 		{
 			brand: 'MSI',
 			model: 'founders edition',
@@ -701,8 +702,104 @@ export const TopAchat: Store = {
 			series: '3090',
 			url:
 				'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_wgfx_pcie_puis_ref_est_in20005257.html'
-		}
-
+		},
+		// Seasonic 1000w
+		// ==================
+		{
+			brand: 'Seasonic',
+			model: '1000W',
+			series: 'PRIME GX',
+			url:
+				'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_w_ali_puis_ref_est_in11019367.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '1000W',
+			series: 'PRIME PX',
+			url:
+				'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_w_ali_puis_ref_est_in11019370.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '1000W',
+			series: 'PRIME TX',
+			url:
+				'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_w_ali_puis_ref_est_in11019374.html'
+		},
+		// Seasonic 850w
+		// ==================
+		{
+			brand: 'Seasonic',
+			model: '850W',
+			series: 'FOCUS GX',
+			url:
+				'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_w_ali_puis_ref_est_in11018879.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '850W',
+			series: 'FOCUS PX',
+			url:
+				'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_w_ali_puis_ref_est_in11018880.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '850W',
+			series: 'PRIME GX',
+			url:
+				'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_w_ali_puis_ref_est_in11019365.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '850W',
+			series: 'PRIME PX',
+			url:
+				'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_w_ali_puis_ref_est_in11019369.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '850W',
+			series: 'PRIME TX',
+			url:
+				'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_w_ali_puis_ref_est_in11019373.html'
+		},
+		// Seasonic 750w
+		// ==================
+		{
+			brand: 'Seasonic',
+			model: '750W',
+			series: 'FOCUS GX',
+			url:
+				'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_w_ali_puis_ref_est_in10105687.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '750W',
+			series: 'FOCUS PX',
+			url:
+				'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_w_ali_puis_ref_est_in11018960.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '750W',
+			series: 'PRIME GX',
+			url:
+				'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_w_ali_puis_ref_est_in11019364.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '750W',
+			series: 'PRIME PX',
+			url:
+				'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_w_ali_puis_ref_est_in11019368.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '750W',
+			series: 'PRIME TX',
+			url:
+				'https://www.topachat.com/pages/detail2_cat_est_micro_puis_rubrique_est_w_ali_puis_ref_est_in11019372.html'
+		},
 	],
 	name: 'topachat',
 };

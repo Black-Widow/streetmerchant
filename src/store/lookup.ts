@@ -345,6 +345,7 @@ async function lookupCardInStock(store: Store, page: Page, link: Link) {
 	}
 
 	if (store.labels.maxPrice) {
+		// @ts-ignore
 		const maxPrice = config.store.maxPrice.series[link.series];
 
 		link.price = await getPrice(page, store.labels.maxPrice, baseOptions);

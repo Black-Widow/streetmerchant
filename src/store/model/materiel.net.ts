@@ -51,51 +51,90 @@ export const MaterielNet: Store = {
 			series: 'ryzen5900',
 			url: 'https://www.materiel.net/produit/202010120130.html'
 		},
-		// RX6800 Series
+		// Seasonic 750w
 		// ==================
-		/*{
-			brand: 'sapphire',
-			model: 'founders edition',
-			series: 'rx6800xt',
-			url: 'https://www.materiel.net/produit/202011060047.html'
-		},
-
 		{
-			brand: 'sapphire',
-			model: 'founders edition',
-			series: 'rx6800',
-			url: 'https://www.materiel.net/produit/202011060051.html'
+			brand: 'Seasonic',
+			model: '750W',
+			series: 'FOCUS GX',
+			url: 'https://www.materiel.net/produit/201905270036.html'
 		},
 		{
-			brand: 'MSI',
-			model: 'founders edition',
-			series: 'rx6800xt',
-			url: 'https://www.materiel.net/produit/202011040090.html'
+			brand: 'Seasonic',
+			model: '750W',
+			series: 'FOCUS PX',
+			url: 'https://www.materiel.net/produit/201905270041.html'
 		},
 		{
-			brand: 'MSI',
-			model: 'founders edition',
-			series: 'rx6800',
-			url: 'https://www.materiel.net/produit/202011040091.html'
+			brand: 'Seasonic',
+			model: '750W',
+			series: 'PRIME GX',
+			url: 'https://www.materiel.net/produit/202001260012.html'
 		},
 		{
-			brand: 'asrock',
-			model: 'founders edition',
-			series: 'rx6800xt',
-			url: 'https://www.materiel.net/produit/202011120043.html'
+			brand: 'Seasonic',
+			model: '750W',
+			series: 'PRIME PX',
+			url: 'https://www.materiel.net/produit/202001260008.html'
 		},
 		{
-			brand: 'asrock',
-			model: 'founders edition',
-			series: 'rx6800',
-			url: 'https://www.materiel.net/produit/202011120046.html'
+			brand: 'Seasonic',
+			model: '750W',
+			series: 'PRIME TX',
+			url: 'https://www.materiel.net/produit/202001260003.html'
+		},
+		// Seasonic 850w
+		// ==================
+		{
+			brand: 'Seasonic',
+			model: '850W',
+			series: 'FOCUS GX',
+			url: 'https://www.materiel.net/produit/201905270038.html'
 		},
 		{
-			brand: 'GIGABYTE',
-			model: 'founders edition',
-			series: 'rx6800xt',
-			url: 'https://www.materiel.net/produit/202011160095.html'
-		},*/
+			brand: 'Seasonic',
+			model: '850W',
+			series: 'FOCUS PX',
+			url: 'https://www.materiel.net/produit/201905270042.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '850W',
+			series: 'PRIME GX',
+			url: 'https://www.materiel.net/produit/202001260011.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '850W',
+			series: 'PRIME PX',
+			url: 'https://www.materiel.net/produit/202001260007.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '850W',
+			series: 'PRIME TX',
+			url: 'https://www.materiel.net/produit/202001260002.html'
+		},
+		// Seasonic 1000w
+		// ==================
+		{
+			brand: 'Seasonic',
+			model: '1000W',
+			series: 'PRIME GX',
+			url: 'https://www.materiel.net/produit/202001260010.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '1000W',
+			series: 'PRIME PX',
+			url: 'https://www.materiel.net/produit/202001260006.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '1000W',
+			series: 'PRIME TX',
+			url: 'https://www.materiel.net/produit/202001260001.html'
+		},
 	],
 	linksBuilder: {
 		builder: getProductLinksBuilder({
