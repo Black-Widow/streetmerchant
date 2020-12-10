@@ -1,5 +1,4 @@
 import {Store} from './store';
-import {getProductLinksBuilder} from "./helpers/card";
 
 export const HardwareFR: Store = {
 	labels: {
@@ -158,6 +157,157 @@ export const HardwareFR: Store = {
 			model: 'founders edition',
 			series: 'rx6800xt',
 			url: 'https://shop.hardware.fr/fiche/AR202011060047.html'
+		},
+		{
+			brand: 'ASROCK',
+			model: 'founders edition',
+			series: 'rx6900xt',
+			url: 'https://shop.hardware.fr/fiche/AR202012030019.html'
+		},
+		{
+			brand: 'ASUS',
+			model: 'founders edition',
+			series: 'rx6900xt',
+			url: 'https://shop.hardware.fr/fiche/AR202011260052.html'
+		},
+		{
+			brand: 'ASUS',
+			model: "tuf oc",
+			series: 'rx6900xt',
+			url: 'https://shop.hardware.fr/fiche/AR202012090085.html'
+		},
+		{
+			brand: 'GIGABYTE',
+			model: "founders edition",
+			series: 'rx6900xt',
+			url: 'https://shop.hardware.fr/fiche/AR202012080076.html'
+		},
+		{
+			brand: 'MSI',
+			model: "founders edition",
+			series: 'rx6900xt',
+			url: 'https://shop.hardware.fr/fiche/AR202012020040.html'
+		},
+		{
+			brand: 'POWERCOLOR',
+			model: "founders edition",
+			series: 'rx6900xt',
+			url: 'https://shop.hardware.fr/fiche/AR202012070018.html'
+		},
+		{
+			brand: 'POWERCOLOR',
+			model: "red devil",
+			series: 'rx6900xt',
+			url: 'https://shop.hardware.fr/fiche/AR202012080124.html'
+		},
+		{
+			brand: 'POWERCOLOR',
+			model: "red devil limited",
+			series: 'rx6900xt',
+			url: 'https://shop.hardware.fr/fiche/AR202012080123.html'
+		},
+		{
+			brand: 'SAPPHIRE',
+			model: "founders edition",
+			series: 'rx6900xt',
+			url: 'https://shop.hardware.fr/fiche/AR202011260038.html'
+		},
+		// Seasonic 750w
+		// ==================
+		{
+			brand: 'Seasonic',
+			model: '750W',
+			series: 'FOCUS GX',
+			url:
+				'https://shop.hardware.fr/fiche/AR201905270036.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '750W',
+			series: 'FOCUS PX',
+			url:
+				'https://shop.hardware.fr/fiche/AR201905270041.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '750W',
+			series: 'PRIME GX',
+			url:
+				'https://shop.hardware.fr/fiche/AR202001260012.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '750W',
+			series: 'PRIME PX',
+			url:
+				'https://shop.hardware.fr/fiche/AR202001260008.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '750W',
+			series: 'PRIME TX',
+			url:
+				'https://shop.hardware.fr/fiche/AR202001260003.html'
+		},
+		// Seasonic 850w
+		// ==================
+		{
+			brand: 'Seasonic',
+			model: '850W',
+			series: 'FOCUS GX',
+			url:
+				'https://shop.hardware.fr/fiche/AR201905270038.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '850W',
+			series: 'FOCUS PX',
+			url:
+				'https://shop.hardware.fr/fiche/AR201905270042.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '850W',
+			series: 'PRIME GX',
+			url:
+				'https://shop.hardware.fr/fiche/AR202001260011.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '850W',
+			series: 'PRIME PX',
+			url:
+				'https://shop.hardware.fr/fiche/AR202001260007.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '850W',
+			series: 'PRIME TX',
+			url:
+				'https://shop.hardware.fr/fiche/AR202001260002.html'
+		},
+		// Seasonic 1000w
+		// ==================
+		{
+			brand: 'Seasonic',
+			model: '1000W',
+			series: 'PRIME GX',
+			url:
+				'https://shop.hardware.fr/fiche/AR202001260010.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '1000W',
+			series: 'PRIME PX',
+			url:
+				'https://shop.hardware.fr/fiche/AR202001260006.html'
+		},
+		{
+			brand: 'Seasonic',
+			model: '1000W',
+			series: 'PRIME TX',
+			url:
+				'https://shop.hardware.fr/fiche/AR202001260001.html'
 		},
 	],
 

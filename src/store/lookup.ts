@@ -165,6 +165,10 @@ async function lookup(browser: Browser, store: Store) {
 			logger.info(Print.inStockWaiting(link, store, true));
 			continue;
 		}
+		if (config.page.inStockWaitTime && preorder[link.url]) {
+			logger.info(Print.inStockWaiting(link, store, true));
+			continue;
+		}
 
 		const proxy = nextProxy(store);
 

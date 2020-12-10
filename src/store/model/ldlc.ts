@@ -42,66 +42,6 @@ export const LDLC: Store = {
 			series: 'ryzen5900',
 			url: 'https://www.ldlc.com/fiche/PB00387540.html'
 		},
-		// RX6800 Series
-		// ==================
-		/*{
-			brand: 'sapphire',
-			model: 'founders edition',
-			series: 'rx6800xt',
-			url: 'https://www.ldlc.com/fiche/PB00391076.html'
-    },
-
-		{
-			brand: 'sapphire',
-			model: 'founders edition',
-			series: 'rx6800',
-			url: 'https://www.ldlc.com/fiche/PB00391077.html'
-		},
-		{
-			brand: 'MSI',
-			model: 'founders edition',
-			series: 'rx6800xt',
-			url: 'https://www.ldlc.com/fiche/PB00391072.html'
-		},
-		{
-			brand: 'MSI',
-			model: 'founders edition',
-			series: 'rx6800',
-			url: 'https://www.ldlc.com/fiche/PB00390771.html'
-		},
-		{
-			brand: 'asrock',
-			model: 'founders edition',
-			series: 'rx6800xt',
-			url: 'https://www.ldlc.com/fiche/PB00391081.html'
-		},
-		{
-			brand: 'asrock',
-			model: 'founders edition',
-			series: 'rx6800',
-			url: 'https://www.ldlc.com/fiche/PB00391080.html'
-    	},
-		{
-			brand: 'GIGABYTE',
-			model: 'founders edition',
-			series: 'rx6800xt',
-			url: 'https://www.ldlc.com/fiche/PB00391079.html'
-    	},*/
-		// RTX3000 Series "Founder Edition"
-		// ==================
-		{
-			brand: 'NVIDIA',
-			model: 'founders edition',
-			series: '3090',
-			url: 'https://www.ldlc.com/fiche/PB00391083.html'
-    	},
-		{
-			brand: 'NVIDIA',
-			model: 'founders edition',
-			series: '3070',
-			url: 'https://www.ldlc.com/fiche/PB00000302.html'
-    	},
-
 	],
 	linksBuilder: {
 		builder: getProductLinksBuilder({
